@@ -29,3 +29,19 @@ const quotes = [
         author: " Tyne Daly"
     }
 ];
+
+const btn = document.querySelector('#generate-quote');
+const quote = document.querySelector('.quote--text');
+const quoteAuthor = document.querySelector('.quote--author');
+
+const randomQuoteIndex = arr => Math.floor(Math.random() * arr.length)
+
+const postRandomQuote = arr => {
+    console.log('clicked')
+    let index = randomQuoteIndex(arr)
+    quote.textContent = arr[index].quote;
+    quoteAuthor.textContent = arr[index].author;
+
+}
+
+btn.onclick = () => postRandomQuote(quotes);
